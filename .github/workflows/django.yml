@@ -51,12 +51,10 @@ jobs:
         pip install -r requirements.txt
     - name: Format with black
       run: |
-        pip install black
         # format the files with black
         black .
     - name: Lint with flake8
       run: |
-        pip install flake8
         flake8 .
     - name: Setup test database
       env:
