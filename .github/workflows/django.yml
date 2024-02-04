@@ -42,7 +42,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2.4.0
     - name: Set working directory
-      run: cd credit_approval_system
+      run:  cd Alemeno_Task/credit_approval_system
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2.3.1
       with:
