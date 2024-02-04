@@ -14,9 +14,9 @@ COPY . /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the project files into the container
-
+RUN apt-get update && apt-get install -y postgresql-client
 # Expose port 8000 for Django
 EXPOSE 8000
 
-# Command to run on container start
+# Command to run on container start 
 CMD ["gunicorn", "credit_approval_system.wsgi:application", "--bind", "0.0.0.0:8000"]
