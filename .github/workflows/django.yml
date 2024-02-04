@@ -44,7 +44,7 @@ jobs:
     - name: get pwd
       run:  pwd
     - name: Set working directory
-      run:  cd credit_approval_system/
+      run:  cd /home/runner/work/Alemeno_Task/Alemeno_Task/credit_approval_system/
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2.3.1
       with:
