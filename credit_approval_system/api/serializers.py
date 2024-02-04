@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from api.models import Customer, Loan
-
+import random
 
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -24,7 +24,9 @@ class CustomerSerializer(serializers.ModelSerializer):
             rounded_approved_limit = approved_limit - remainder
         else:
             rounded_approved_limit = approved_limit + (100000 - remainder)
+        customer_id = random.randint(1000,9999)
         customer = Customer(
+            customer_id = customer_id,
             first_name=validated_data["first_name"],
             last_name=validated_data["last_name"],
             phone_number=validated_data["phone_number"],
