@@ -13,9 +13,7 @@ This is a Django application designed for a credit approval system. The applicat
 - [Usage](#usage)
   - [Accessing the Django Admin](#accessing-the-django-admin)
 - [Docker Compose](#docker-compose)
-- [Custom Django Commands](#custom-django-commands)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Prerequisites
 
