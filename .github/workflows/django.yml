@@ -1,0 +1,40 @@
+name: Django Test 
+
+on:
+    workflow_call:
+    workflow_dispatch:
+    push:
+       branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+  simple_build:
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+           python-version: 3.11
+      - name: Install requirements
+        run: |
+            pip install -r requirements.txt
+      - name: Run tests
+        run: |
+            cd credit_approval_system
+            python manage.py test
+
+      - name: Run Black
+        run: |
+            cd credit_approval_system
+            black .
+
+      - name: Run Flake8
+        run: |
+            cd credit_approval_system
+            flake8 .
+      
+     
