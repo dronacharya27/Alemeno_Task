@@ -55,7 +55,7 @@ jobs:
         black .
     - name: Lint with flake8
       run: |
-        flake8 . --ignore E501
+        flake8 . --ignore E501,W503
     - name: Setup test database
       env:
         POSTGRES_DB_NAME: ${{ matrix.database-name }}
