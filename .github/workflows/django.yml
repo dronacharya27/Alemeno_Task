@@ -70,7 +70,7 @@ jobs:
         export DEBUG=1
     - name: Run migrations
       run: |
-        cd Alemeno_Task/credit_approval_system/
+        cd /home/runner/work/Alemeno_Task/credit_approval_system/
         export DATABASE_URL=postgres://${{ matrix.database-user }}:${{ matrix.database-password }}@${{ matrix.database-host }}:${{ matrix.database-port }}/${{ matrix.database-name }}
         export SECRET_KEY=test-secret-key
         export DEBUG=1
@@ -83,7 +83,7 @@ jobs:
         python manage.py check
     - name: Run tests
       run: |
-          cd Alemeno_Task/credit_approval_system/
+          cd /home/runner/work/Alemeno_Task/credit_approval_system/
           python manage.py test
       env:
         DATABASE_URL: postgres://${{ matrix.database-user }}:${{ matrix.database-password }}@${{ matrix.database-host }}:${{ matrix.database-port }}/${{ matrix.database-name }}
@@ -95,7 +95,7 @@ jobs:
     - uses: actions/checkout@v2.4.0
     - name: Build the images and start the containers
       run: |
-        cd Alemeno_Task/credit_approval_system/
+        cd /home/runner/work/Alemeno_Task/credit_approval_system/
         export GITHUB_WORKFLOW=True
         export MODE="Test"
         docker-compose -f docker-compose.yml build
