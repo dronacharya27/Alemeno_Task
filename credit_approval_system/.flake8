@@ -4,6 +4,7 @@ exclude =migrations,settings.py,_temp,work,runnner
                     exclude. (Default: ['.svn', 'CVS', '.bzr', '.hg',
                     '.git', '__pycache__', '.tox', '.eggs', '*.egg'])
 ignore =
+    E111,
     E121,
     E126,
     E127,

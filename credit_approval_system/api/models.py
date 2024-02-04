@@ -6,9 +6,9 @@ class Customer(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     age = models.IntegerField()
-    phone_number = models.IntegerField()
-    monthly_salary = models.IntegerField()
-    approved_limit = models.IntegerField(null=True, blank=True)
+    phone_number = models.BigIntegerField()
+    monthly_salary = models.BigIntegerField()
+    approved_limit = models.BigIntegerField(null=True, blank=True)
     current_debt = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
