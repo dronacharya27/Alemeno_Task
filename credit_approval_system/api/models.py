@@ -11,6 +11,9 @@ class Customer(models.Model):
     approved_limit = models.IntegerField(null=True, blank=True)
     current_debt = models.IntegerField(null=True, blank=True)
 
+    def __str__(self):
+        return self.first_name
+    
 
 class Loan(models.Model):
     loan_id = models.IntegerField()
@@ -22,3 +25,6 @@ class Loan(models.Model):
     interest_rate = models.FloatField()
     monthly_repayment = models.DecimalField(max_digits=10, decimal_places=2)
     emis_paid_on_time = models.IntegerField()
+
+    def __str__(self) -> str:
+       return self.loan_id
